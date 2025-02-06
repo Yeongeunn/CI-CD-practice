@@ -1,7 +1,3 @@
--- 대략적인 제공 기능별 mysql 쿼리 적어봤습니다
--- 수정이 아주 많이 필요한 상태입니당 - 준희
-
-
 -- 모든 제품 정보 조회
 SELECT p.*, c.categoryName
 FROM products p
