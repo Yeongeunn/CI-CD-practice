@@ -1,8 +1,12 @@
 function ensureAuthenticated(req, res, next) {
   console.log('authMid 실행됨'); // 미들웨어 실행 확인
 
+  if (req.originalUrl.startsWith('/static') || req.originalUrl === '/favicon.ico') {
+    return next(); // 정적 파일 요청은 인증 검사 없이 통과
+  }
+
   if (req.isAuthenticated && req.isAuthenticated()) {
-      console.log('Authenticated user:', req.user); // 유저 정보 출력
+      //console.log('Authenticated user:', req.user); // 유저 정보 출력
       return next();
   } else {
       console.log('User not authenticated');

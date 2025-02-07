@@ -5,8 +5,8 @@ const { ensureAuthenticated } = require('../middleware/authMid'); // ensureAuthe
 
 // 세션 및 사용자 정보 로깅 미들웨어 추가
 router.use((req, res, next) => {
-  console.log('Session:', req.session);
-  console.log('User:', req.user);
+  //console.log('Session:', req.session);
+  //console.log('User:', req.user);
   next();
 });
 

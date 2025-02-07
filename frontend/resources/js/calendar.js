@@ -41,18 +41,18 @@ document.addEventListener('DOMContentLoaded', function () {
       myDeleteButton: {
         text: "삭제",
         click: function () {
-          console.log('삭제 버튼 클릭');
+          //console.log('삭제 버튼 클릭');
           if (currentSelectedEventId) {
             if (confirm("정말로 이 일정을 삭제하시겠습니까?")) {
               const selectedEvent = calendar.getEventById(currentSelectedEventId);
               
               if (selectedEvent) {
-                console.log('삭제할 이벤트:', selectedEvent);
+                //console.log('삭제할 이벤트:', selectedEvent);
       
                 // 서버에 삭제 요청
                 axios.delete(`/calendar/events/${currentSelectedEventId}`)
                   .then(function (response) {
-                    console.log('이벤트 삭제 성공:', response);
+                    //console.log('이벤트 삭제 성공:', response);
       
                     // 캘린더에서 이벤트 삭제
                     selectedEvent.remove();
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentSelectedEventId = info.event.id;
       
         // 이벤트 ID 출력하여 확인
-        console.log('선택된 이벤트 ID:', currentSelectedEventId);
+        //console.log('선택된 이벤트 ID:', currentSelectedEventId);
       },
       
 
