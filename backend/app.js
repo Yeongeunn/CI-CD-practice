@@ -47,13 +47,12 @@ app.use((req, res, next) => {
 });
 
 // 정적 파일 제공 설정
-app.use(express.static(path.join(__dirname, '..', 'frontend', 'resources')));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(path.join(__dirname, 'public')));  // 정적 파일 제공
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));  // 업로드 폴더
 
 // EJS 설정
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '..', 'frontend', 'views'));
-
+app.set('views', path.join(__dirname, 'views'));
 // 라우트 연결
 app.use(routes);
 
