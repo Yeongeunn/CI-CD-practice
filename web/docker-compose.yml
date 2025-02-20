@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    build: ./web
+    build: .
     ports:
       - "3000:3000"
     depends_on:
@@ -16,7 +16,7 @@ services:
       - DATABASE_DIALECT=${DATABASE_DIALECT}
       - PORT=${PORT}
     volumes:
-      - ./web:/app
+      - .:/app
     command: ["sh", "-c", "npx sequelize db:migrate && node server.js"]
 
   db:
