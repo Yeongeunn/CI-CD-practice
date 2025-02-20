@@ -9,12 +9,12 @@ services:
       - db
     environment:
       - NODE_ENV=production
-      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_HOST=db
       - DATABASE_USERNAME=${DATABASE_USERNAME}
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - DATABASE_NAME=${DATABASE_NAME}
-      - DATABASE_DIALECT=${DATABASE_DIALECT}
-      - PORT=${PORT}
+      - DATABASE_DIALECT=mysql
+      - PORT=3000
     volumes:
       - .:/app
     command: ["sh", "-c", "npx sequelize db:migrate && node server.js"]
